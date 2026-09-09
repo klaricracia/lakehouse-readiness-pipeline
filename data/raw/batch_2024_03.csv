@@ -1,0 +1,216 @@
+record_id,submitted_at,status,region,proc_hours_total,assigned_office
+SR-000739,2024-03-01T20:07:00,resolved,South Verdalia,13.1,Office-Capital-01
+SR-000666,2024-03-18T19:27:00,closed,South Verdalia,18.5,Office-Capital-01
+SR-000696,2024-03-18T21:18:00,submitted,North Verdalia,18.7,Office-South-02
+SR-000623,2024-03-20T19:22:00,submitted,North Verdalia,4.0,Office-East-03
+SR-000664,2024-03-05T02:24:00,resolved,Eastport,28.7,Office-North-01
+SR-000647,2024-03-10T05:28:00,in_review,Western Highlands,9.7,Office-South-02
+SR-000698,2024-03-17T10:56:00,closed,Western Highlands,29.8,Office-West-04
+SR-000612,2024-03-19T02:52:00,in_review,Eastport,30.4,Office-East-03
+SR-000603,2024-03-18T03:17:00,resolved,South Verdalia,38.9,Office-East-03
+SR-000683,2024-03-08T11:05:00,resolved,Western Highlands,49.1,Office-Capital-01
+SR-000625,2024-03-03T09:17:00,submitted,North Verdalia,15.1,Office-West-04
+SR-000703,2024-03-24T20:11:00,resolved,Eastport,6.1,Office-Capital-01
+SR-000697,2024-03-23T00:40:00,closed,Eastport,9.4,Office-North-01
+SR-000675,2024-03-05T11:19:00,in_review,,8.6,Office-Capital-01
+SR-000716,2024-03-15T14:51:00,resolved,North Verdalia,1.5,Office-Capital-01
+SR-000763,2024-03-02T11:29:00,resolved,Eastport,4.4,Office-West-04
+SR-000758,2024-03-09T23:13:00,in_review,North Verdalia,15.3,Office-North-01
+SR-000771,2024-03-13T23:41:00,closed,Western Highlands,11.6,Office-West-04
+SR-000686,2024-03-09T09:37:00,rejected,Western Highlands,2.4,Office-South-02
+SR-000710,2024-03-08T20:02:00,closed,South Verdalia,19.6,Office-East-03
+SR-000733,2024-03-23T23:28:00,resolved,,21.0,Office-East-03
+SR-000765,2024-03-23T21:34:00,resolved,South Verdalia,16.1,Office-Capital-01
+SR-000681,2024-03-01T05:12:00,resolved,Capital District,34.0,Office-North-01
+SR-000794,2024-03-08T02:34:00,submitted,Capital District,3.3,Office-West-04
+SR-000718,2024-03-13T18:28:00,closed,Western Highlands,46.8,Office-South-02
+SR-000785,2024-03-17T15:30:00,resolved,South Verdalia,48.7,Office-West-04
+SR-000799,2024-03-03T14:23:00,closed,Capital District,7.0,Office-North-01
+SR-000762,2024-03-17T02:46:00,in_review,South Verdalia,29.4,Office-West-04
+SR-000700,2024-03-20T05:13:00,submitted,South Verdalia,33.9,Office-West-04
+SR-000689,2024-03-22T00:47:00,closed,,16.7,Office-East-03
+SR-000622,2024-03-16T03:12:00,resolved,Western Highlands,22.2,Office-South-02
+SR-000705,2024-03-20T19:01:00,resolved,North Verdalia,36.0,Office-South-02
+SR-000661,2024-03-08T07:59:00,closed,South Verdalia,15.9,Office-West-04
+SR-000729,2024-03-12T20:49:00,submitted,Eastport,19.0,Office-West-04
+SR-000702,2024-03-08T14:01:00,resolved,North Verdalia,27.7,Office-West-04
+SR-000795,2024-03-06T04:38:00,resolved,Eastport,32.9,Office-South-02
+SR-000679,2024-03-10T04:54:00,submitted,North Verdalia,3.2,Office-East-03
+SR-000658,2024-03-03T10:37:00,in_review,Capital District,14.1,Office-South-02
+SR-000717,2024-03-17T02:06:00,closed,Eastport,4.5,Office-Capital-01
+SR-000610,2024-03-13T02:11:00,submitted,Eastport,24.4,Office-North-01
+SR-000695,2024-03-23T01:54:00,submitted,Western Highlands,14.9,Office-Capital-01
+SR-000798,2024-03-11T11:20:00,closed,Western Highlands,16.6,Office-East-03
+SR-000707,2024-03-19T08:22:00,in_review,South Verdalia,17.2,Office-East-03
+SR-000734,2024-03-20T06:09:00,closed,Capital District,49.1,Office-South-02
+SR-000726,2024-03-03T09:14:00,closed,South Verdalia,20.6,Office-Capital-01
+SR-000678,2024-03-12T21:35:00,resolved,Eastport,12.8,Office-West-04
+SR-000667,2024-03-07T15:32:00,closed,Western Highlands,2.1,Office-West-04
+SR-000767,2024-03-05T11:45:00,resolved,Capital District,15.6,Office-West-04
+SR-000615,2024-03-19T04:17:00,in_review,North Verdalia,30.1,Office-South-02
+SR-000628,2024-03-13T03:41:00,submitted,South Verdalia,25.4,Office-East-03
+SR-000641,2024-03-11T21:43:00,in_review,Western Highlands,15.4,Office-South-02
+SR-000646,2024-03-17T14:12:00,resolved,Western Highlands,31.8,Office-North-01
+SR-000761,2024-03-20T16:55:00,resolved,,41.7,Office-South-02
+SR-000632,2024-03-12T05:53:00,closed,North Verdalia,20.1,Office-West-04
+SR-000766,2024-03-04T07:26:00,closed,North Verdalia,25.7,Office-South-02
+SR-000732,2024-03-03T17:35:00,resolved,North Verdalia,11.1,Office-East-03
+SR-000633,2024-03-10T06:02:00,in_review,Western Highlands,33.5,Office-North-01
+SR-000614,2024-03-20T10:07:00,resolved,Western Highlands,31.5,Office-West-04
+SR-000730,2024-03-17T09:38:00,resolved,North Verdalia,6.9,Office-Capital-01
+SR-000744,2024-03-02T23:29:00,closed,,24.8,Office-East-03
+SR-000741,2024-03-08T05:21:00,resolved,North Verdalia,29.7,Office-East-03
+SR-000629,2024-03-14T18:32:00,submitted,Capital District,10.3,Office-Capital-01
+SR-000619,2024-03-13T11:29:00,in_review,Eastport,16.8,Office-Capital-01
+SR-000750,2024-03-10T10:07:00,closed,Capital District,19.6,Office-North-01
+SR-000722,2024-03-10T18:32:00,closed,South Verdalia,51.9,Office-West-04
+SR-000616,2024-03-15T11:38:00,resolved,South Verdalia,5.0,Office-West-04
+SR-000699,2024-03-18T18:54:00,resolved,Capital District,37.2,Office-East-03
+SR-000659,2024-03-05T20:29:00,resolved,North Verdalia,17.1,Office-South-02
+SR-000637,2024-03-09T07:25:00,resolved,North Verdalia,21.3,Office-South-02
+SR-000770,2024-03-20T21:49:00,closed,North Verdalia,39.9,Office-North-01
+SR-000792,2024-03-10T23:38:00,closed,,21.3,Office-Capital-01
+SR-000652,2024-03-11T22:59:00,closed,South Verdalia,14.7,Office-West-04
+SR-000780,2024-03-11T13:08:00,closed,Eastport,7.5,Office-East-03
+SR-000759,2024-03-05T21:24:00,resolved,South Verdalia,16.8,Office-North-01
+SR-000672,2024-03-24T03:25:00,closed,North Verdalia,7.1,Office-North-01
+SR-000793,2024-03-03T13:22:00,closed,South Verdalia,35.0,Office-East-03
+SR-000746,2024-03-06T03:00:00,in_review,North Verdalia,9.0,Office-East-03
+SR-000748,2024-03-05T18:10:00,in_review,South Verdalia,10.6,Office-South-02
+SR-000706,2024-03-09T14:48:00,closed,North Verdalia,50.8,Office-South-02
+SR-000749,2024-03-02T20:42:00,submitted,Western Highlands,5.1,Office-North-01
+SR-000638,2024-03-16T17:56:00,closed,Capital District,25.6,Office-Capital-01
+SR-000742,2024-03-08T05:15:00,in_review,Eastport,10.4,Office-East-03
+SR-000685,2024-03-23T09:00:00,submitted,South Verdalia,65.3,Office-South-02
+SR-000783,2024-03-10T18:28:00,closed,South Verdalia,8.6,Office-South-02
+SR-000709,2024-03-16T22:05:00,closed,North Verdalia,8.0,Office-East-03
+SR-000650,2024-03-17T05:38:00,resolved,Eastport,10.3,Office-West-04
+SR-000721,2024-03-09T19:24:00,resolved,Capital District,14.1,Office-North-01
+SR-000606,2024-03-19T22:14:00,resolved,South Verdalia,54.2,Office-East-03
+SR-000618,2024-03-10T23:28:00,closed,South Verdalia,14.5,Office-West-04
+SR-000747,2024-03-15T18:40:00,closed,,33.7,Office-East-03
+SR-000781,2024-03-17T06:49:00,resolved,Western Highlands,16.0,Office-Capital-01
+SR-000791,2024-03-06T18:51:00,closed,South Verdalia,5.5,Office-East-03
+SR-000714,2024-03-19T01:29:00,submitted,Western Highlands,7.3,Office-North-01
+SR-000687,2024-03-21T08:52:00,closed,Eastport,7.3,Office-South-02
+SR-000663,2024-03-21T23:35:00,closed,Eastport,33.4,Office-West-04
+SR-000665,2024-03-05T19:18:00,rejected,Eastport,5.4,Office-East-03
+SR-000627,2024-03-23T11:03:00,resolved,Western Highlands,7.0,Office-North-01
+SR-000735,2024-03-02T15:58:00,closed,,19.8,Office-West-04
+SR-000642,2024-03-02T01:26:00,resolved,Capital District,7.9,Office-North-01
+SR-000653,2024-03-23T10:32:00,resolved,North Verdalia,3.8,Office-South-02
+SR-000787,2024-03-12T11:53:00,resolved,Eastport,24.4,Office-South-02
+SR-000682,2024-03-03T18:59:00,closed,North Verdalia,30.7,Office-West-04
+SR-000608,2024-03-20T14:46:00,resolved,Capital District,76.6,Office-East-03
+SR-000692,2024-03-01T08:21:00,submitted,Eastport,12.1,Office-South-02
+SR-000788,2024-03-16T12:35:00,resolved,Capital District,7.8,Office-South-02
+SR-000772,2024-03-17T06:09:00,resolved,North Verdalia,16.5,Office-North-01
+SR-000671,2024-03-21T15:07:00,submitted,,5.2,Office-East-03
+SR-000779,2024-03-03T02:06:00,in_review,South Verdalia,6.4,Office-Capital-01
+SR-000751,2024-03-22T06:11:00,resolved,North Verdalia,13.6,Office-East-03
+SR-000609,2024-03-14T17:02:00,closed,Western Highlands,43.1,Office-Capital-01
+SR-000715,2024-03-22T09:47:00,closed,Capital District,6.6,Office-East-03
+SR-000680,2024-03-05T07:17:00,in_review,Capital District,61.1,Office-East-03
+SR-000720,2024-03-04T14:36:00,submitted,South Verdalia,6.8,Office-West-04
+SR-000740,2024-03-15T20:50:00,closed,Eastport,17.6,Office-South-02
+SR-000630,2024-03-24T07:47:00,in_review,Western Highlands,18.9,Office-North-01
+SR-000604,2024-03-13T04:45:00,resolved,North Verdalia,38.0,Office-East-03
+SR-000640,2024-03-02T11:34:00,closed,North Verdalia,5.7,Office-West-04
+SR-000651,2024-03-20T06:20:00,submitted,Western Highlands,15.3,Office-East-03
+SR-000678,2024-03-12T21:35:00,resolved,Eastport,12.8,Office-West-04
+SR-000656,2024-03-04T04:51:00,closed,South Verdalia,33.2,Office-South-02
+SR-000712,2024-03-09T21:31:00,submitted,Capital District,9.1,Office-West-04
+SR-000727,2024-03-12T00:02:00,in_review,South Verdalia,15.4,Office-East-03
+SR-000655,2024-03-02T16:37:00,closed,Capital District,12.8,Office-Capital-01
+SR-000723,2024-03-10T04:13:00,submitted,North Verdalia,33.7,Office-West-04
+SR-000691,2024-03-20T11:49:00,in_review,North Verdalia,24.8,Office-South-02
+SR-000775,2024-03-08T11:54:00,submitted,North Verdalia,7.3,Office-South-02
+SR-000644,2024-03-03T11:58:00,resolved,Capital District,13.5,Office-North-01
+SR-000754,2024-03-06T15:04:00,in_review,South Verdalia,8.2,Office-West-04
+SR-000649,2024-03-09T16:56:00,resolved,Capital District,17.1,Office-East-03
+SR-000764,2024-03-19T21:27:00,closed,Eastport,9.2,Office-Capital-01
+SR-000660,2024-03-04T07:29:00,resolved,Capital District,25.5,Office-South-02
+SR-000654,2024-03-09T05:39:00,submitted,Western Highlands,2.3,Office-West-04
+SR-000621,2024-03-13T22:50:00,in_review,North Verdalia,12.2,Office-East-03
+SR-000725,2024-03-13T13:19:00,in_review,South Verdalia,8.4,Office-Capital-01
+SR-000749,2024-03-02T20:42:00,submitted,Western Highlands,5.1,Office-North-01
+SR-000723,2024-03-10T04:13:00,submitted,North Verdalia,33.7,Office-West-04
+SR-000677,2024-03-01T15:00:00,submitted,,20.6,Office-Capital-01
+SR-000708,2024-03-21T19:07:00,resolved,,12.2,Office-Capital-01
+SR-000769,2024-03-21T22:06:00,closed,North Verdalia,11.3,Office-North-01
+SR-000613,2024-03-14T05:44:00,in_review,Capital District,37.8,Office-Capital-01
+SR-000617,2024-03-07T01:06:00,closed,South Verdalia,21.5,Office-East-03
+SR-000648,2024-03-02T12:09:00,resolved,Capital District,15.2,Office-West-04
+SR-000757,2024-03-12T18:38:00,closed,Western Highlands,41.3,Office-West-04
+SR-000720,2024-03-04T14:36:00,submitted,South Verdalia,6.8,Office-West-04
+SR-000622,2024-03-16T03:12:00,resolved,Western Highlands,22.2,Office-South-02
+SR-000774,2024-03-13T15:28:00,resolved,Eastport,2.7,Office-West-04
+SR-000731,2024-03-09T19:45:00,submitted,Eastport,5.4,Office-North-01
+SR-000641,2024-03-11T21:43:00,in_review,Western Highlands,15.4,Office-South-02
+SR-000674,2024-03-09T10:46:00,closed,Western Highlands,48.3,Office-Capital-01
+SR-000631,2024-03-12T11:26:00,in_review,Eastport,29.1,Office-South-02
+SR-000756,2024-03-19T09:28:00,in_review,South Verdalia,24.2,Office-North-01
+SR-000634,2024-03-20T12:59:00,submitted,Capital District,33.9,Office-West-04
+SR-000755,2024-03-20T14:48:00,in_review,Western Highlands,18.0,Office-Capital-01
+SR-000778,2024-03-06T00:59:00,closed,Capital District,20.6,Office-East-03
+SR-000790,2024-03-01T21:40:00,resolved,Western Highlands,17.5,Office-West-04
+SR-000724,2024-03-22T16:24:00,closed,Capital District,3.7,Office-West-04
+SR-000635,2024-03-19T23:28:00,resolved,Capital District,34.5,Office-Capital-01
+SR-000701,2024-03-13T02:45:00,closed,Capital District,75.2,Office-South-02
+SR-000750,2024-03-10T10:07:00,closed,Capital District,19.6,Office-North-01
+SR-000800,2024-03-23T11:58:00,closed,North Verdalia,54.8,Office-North-01
+SR-000789,2024-03-23T17:24:00,closed,South Verdalia,33.1,Office-Capital-01
+SR-000796,2024-03-19T00:48:00,resolved,Eastport,25.4,Office-Capital-01
+SR-000662,2024-03-19T18:03:00,resolved,Capital District,5.9,Office-Capital-01
+SR-000636,2024-03-21T04:54:00,submitted,Capital District,7.8,Office-South-02
+SR-000611,2024-03-11T05:32:00,resolved,Eastport,11.0,Office-North-01
+SR-000752,2024-03-13T11:03:00,in_review,South Verdalia,20.0,Office-Capital-01
+SR-000672,2024-03-24T03:25:00,closed,North Verdalia,7.1,Office-North-01
+SR-000629,2024-03-14T18:32:00,submitted,Capital District,10.3,Office-Capital-01
+SR-000694,2024-03-24T08:44:00,closed,North Verdalia,28.3,Office-Capital-01
+SR-000760,2024-03-15T08:00:00,closed,North Verdalia,36.0,Office-North-01
+SR-000719,2024-03-19T22:41:00,resolved,Capital District,41.3,Office-Capital-01
+SR-000745,2024-03-18T03:43:00,in_review,Capital District,11.2,Office-West-04
+SR-000602,2024-03-14T20:11:00,in_review,Capital District,37.4,Office-East-03
+SR-000684,2024-03-24T16:07:00,in_review,Western Highlands,14.0,Office-East-03
+SR-000755,2024-03-20T14:48:00,in_review,,18.0,Office-Capital-01
+SR-000688,2024-03-17T17:15:00,closed,Capital District,10.7,Office-Capital-01
+SR-000738,2024-03-10T18:58:00,closed,South Verdalia,10.6,Office-North-01
+SR-000605,2024-03-13T02:41:00,in_review,North Verdalia,12.7,Office-South-02
+SR-000639,2024-03-21T18:34:00,in_review,,16.3,Office-South-02
+SR-000607,2024-03-17T17:44:00,resolved,North Verdalia,35.6,Office-West-04
+SR-000635,2024-03-19T23:28:00,resolved,Capital District,34.5,Office-Capital-01
+SR-000713,2024-03-12T22:50:00,submitted,Eastport,24.3,Office-Capital-01
+SR-000782,2024-03-12T19:00:00,closed,Capital District,26.2,Office-West-04
+SR-000784,2024-03-05T02:52:00,resolved,South Verdalia,40.5,Office-Capital-01
+SR-000753,2024-03-05T07:46:00,submitted,Eastport,30.5,Office-North-01
+SR-000657,2024-03-14T20:05:00,in_review,Capital District,20.5,Office-Capital-01
+SR-000670,2024-03-13T19:48:00,in_review,South Verdalia,9.7,Office-North-01
+SR-000645,2024-03-11T21:07:00,in_review,Capital District,7.4,Office-East-03
+SR-000789,2024-03-23T17:24:00,closed,South Verdalia,33.1,Office-Capital-01
+SR-000620,2024-03-17T04:10:00,rejected,Eastport,4.7,Office-East-03
+SR-000607,2024-03-17T17:44:00,resolved,North Verdalia,35.6,Office-West-04
+SR-000656,2024-03-04T04:51:00,closed,South Verdalia,33.2,Office-South-02
+SR-000676,2024-03-01T21:39:00,resolved,Eastport,57.7,Office-North-01
+SR-000601,2024-03-23T00:33:00,closed,North Verdalia,19.6,Office-East-03
+SR-000773,2024-03-01T19:02:00,resolved,South Verdalia,7.3,Office-East-03
+SR-000736,2024-03-13T10:07:00,closed,North Verdalia,17.8,Office-Capital-01
+SR-000728,2024-03-20T21:22:00,closed,South Verdalia,5.7,Office-West-04
+SR-000777,2024-03-03T03:29:00,closed,Eastport,10.0,Office-North-01
+SR-000669,2024-03-11T10:30:00,submitted,,9.6,Office-North-01
+SR-000768,2024-03-08T23:21:00,resolved,North Verdalia,9.6,Office-North-01
+SR-000737,2024-03-04T03:28:00,in_review,Capital District,32.5,Office-North-01
+SR-000643,2024-03-08T10:13:00,resolved,North Verdalia,7.0,Office-North-01
+SR-000711,2024-03-07T10:58:00,submitted,Western Highlands,31.6,Office-West-04
+SR-000690,2024-03-06T11:27:00,resolved,,8.7,Office-East-03
+SR-000673,2024-03-18T15:19:00,submitted,North Verdalia,17.5,Office-South-02
+SR-000624,2024-03-21T16:37:00,resolved,Western Highlands,11.8,Office-West-04
+SR-000743,2024-03-17T17:32:00,closed,,44.1,Office-West-04
+SR-000786,2024-03-06T12:57:00,closed,Western Highlands,11.9,Office-South-02
+SR-000693,2024-03-10T07:36:00,closed,,5.1,Office-Capital-01
+SR-000704,2024-03-11T22:03:00,resolved,,38.9,Office-West-04
+SR-000752,2024-03-13T11:03:00,in_review,South Verdalia,20.0,Office-Capital-01
+SR-000668,2024-03-17T14:00:00,resolved,Capital District,5.9,Office-Capital-01
+SR-000626,2024-03-18T13:37:00,closed,North Verdalia,24.8,Office-Capital-01
+SR-000797,2024-03-22T16:41:00,rejected,South Verdalia,13.5,Office-East-03
+SR-000776,2024-03-22T22:56:00,resolved,North Verdalia,23.2,Office-East-03

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lakehouse Readiness Pipeline — Klarissa Artavia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:#4100F5; --fuchsia:#F037A5; --tangerine:#FF4632; --green:#00C48C;
+      --black:#191414; --surface:#1E1A1A; --surface2:#252020;
+      --text:#F5F5F0; --muted:#9E9A9A;
+      --grad:linear-gradient(135deg,#4100F5,#F037A5,#FF4632);
+    }
+    html,body { background:var(--black); color:var(--text); font-family:'Arimo',sans-serif; min-height:100vh; }
+
+    header { background:var(--black); border-bottom:1px solid #2a2525; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .logo-pill { background:var(--grad); border-radius:8px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:15px; color:#fff; flex-shrink:0; }
+    .header-title h1 { font-weight:900; font-size:18px; letter-spacing:-0.03em; }
+    .header-title p { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--blue); letter-spacing:0.2em; text-transform:uppercase; margin-top:2px; }
+    .badge { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.15em; padding:4px 10px; border-radius:4px; text-transform:uppercase; }
+    .badge-blue { background:var(--blue); color:#fff; }
+    .badge-green { background:#00C48C22; color:var(--green); border:1px solid #00C48C44; }
+    .badge-tang { background:#FF463222; color:var(--tangerine); border:1px solid #FF463244; }
+    .badge-outline { border:1px solid #3a3535; color:var(--muted); }
+
+    .hero { background:var(--grad); padding:48px 40px 40px; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; right:-60px; top:-60px; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,0.07); }
+    .hero-label { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-bottom:12px; }
+    .hero h2 { font-weight:900; font-size:clamp(24px,4vw,40px); letter-spacing:-0.045em; line-height:1.08; color:#fff; max-width:680px; }
+    .hero p { margin-top:12px; font-size:15px; color:rgba(255,255,255,0.85); max-width:600px; line-height:1.55; }
+
+    .kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:#2a2525; border-bottom:1px solid #2a2525; }
+    .kpi-card { background:var(--surface); padding:26px 30px; }
+    .kpi-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .kpi-value { font-weight:900; font-size:28px; letter-spacing:-0.04em; line-height:1; }
+    .kpi-sub { font-size:12px; color:var(--muted); margin-top:4px; }
+    .accent-grad .kpi-value { background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .accent-blue .kpi-value { color:var(--blue); }
+    .accent-tang .kpi-value { color:var(--tangerine); }
+    .accent-green .kpi-value { color:var(--green); }
+
+    .main { padding:32px 40px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:24px; }
+    .full { grid-column:1/-1; }
+    .card { background:var(--surface); border-radius:12px; border:1px solid #2a2525; padding:28px; }
+    .card-sub { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--blue); margin-bottom:4px; }
+    .card-title { font-weight:900; font-size:16px; letter-spacing:-0.03em; margin-bottom:20px; }
+
+    table { width:100%; border-collapse:collapse; font-size:13px; }
+    th { text-align:left; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); padding:8px 10px; border-bottom:1px solid #2a2525; }
+    td { padding:10px 10px; border-bottom:1px solid #241f1f; }
+    tr:last-child td { border-bottom:none; }
+    .pill { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.1em; padding:3px 8px; border-radius:4px; text-transform:uppercase; }
+    .pill-pass { background:#00C48C22; color:var(--green); border:1px solid #00C48C44; }
+    .pill-blocked { background:#FF463222; color:var(--tangerine); border:1px solid #FF463244; }
+    .mono { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); }
+
+    .issue-item { display:flex; gap:12px; padding:12px 0; border-bottom:1px solid #241f1f; align-items:flex-start; }
+    .issue-item:last-child { border-bottom:none; }
+    .issue-dot { width:7px; height:7px; border-radius:50%; background:var(--tangerine); flex-shrink:0; margin-top:6px; }
+    .issue-text { font-size:13px; line-height:1.5; }
+    .issue-text b { color:#fff; }
+
+    .chart-wrap { position:relative; height:220px; }
+
+    .flow { display:flex; align-items:center; gap:0; flex-wrap:wrap; }
+    .flow-step { background:var(--surface2); border:1px solid #2a2525; border-radius:8px; padding:14px 18px; font-size:12px; min-width:150px; }
+    .flow-step .step-label { font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--blue); margin-bottom:4px; }
+    .flow-arrow { padding:0 14px; color:var(--muted); font-size:18px; }
+
+    footer { padding:28px 40px; border-top:1px solid #2a2525; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+    footer p { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); }
+    footer a { color:var(--blue); text-decoration:none; }
+
+    @media(max-width:900px){ .kpi-row{grid-template-columns:1fr 1fr;} .main{grid-template-columns:1fr; padding:20px;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <div class="logo-pill">KA</div>
+    <div class="header-title">
+      <h1>Klarissa Artavia</h1>
+      <p>Data &amp; AI Strategy</p>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <span class="badge badge-blue">Delta Lake</span>
+    <span class="badge badge-green">Demo Run Complete</span>
+    <span class="badge badge-outline">Local / Dependency-Light</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-label">Case Study · Data Engineering</div>
+  <h2>Lakehouse Readiness Pipeline</h2>
+  <p>A pre-build data readiness audit, an automated quality gate, and an idempotent incremental merge into a local Delta Lake table — run end to end on four synthetic "national service request" batches, one deliberately seeded with the schema drift, nulls, and duplicate keys that a real audit is supposed to catch.</p>
+</div>
+
+<div class="kpi-row">
+  <div class="kpi-card accent-grad">
+    <div class="kpi-label">Final Table Rows</div>
+    <div class="kpi-value">850</div>
+    <div class="kpi-sub">850 unique record_id — 0 duplicates</div>
+  </div>
+  <div class="kpi-card accent-blue">
+    <div class="kpi-label">Batches Processed</div>
+    <div class="kpi-value">4 / 4</div>
+    <div class="kpi-sub">3 merged · 1 quarantined</div>
+  </div>
+  <div class="kpi-card accent-tang">
+    <div class="kpi-label">Blocking Issues Found</div>
+    <div class="kpi-value">3</div>
+    <div class="kpi-sub">schema drift · nulls · duplicate keys</div>
+  </div>
+  <div class="kpi-card accent-green">
+    <div class="kpi-label">Idempotent Re-Run</div>
+    <div class="kpi-value">850</div>
+    <div class="kpi-sub">unchanged on second run · 0 inserted</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card">
+    <div class="card-sub">Batch Outcomes</div>
+    <div class="card-title">Audit &amp; Quality Gate Verdicts</div>
+    <table>
+      <thead>
+        <tr><th>Batch</th><th>Rows</th><th>Audit</th><th>Gate</th><th>Table Δ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">batch_2024_01.csv</td>
+          <td>300</td>
+          <td><span class="pill pill-pass">Pass</span></td>
+          <td><span class="pill pill-pass">Merged</span></td>
+          <td class="mono">+300 inserted</td>
+        </tr>
+        <tr>
+          <td class="mono">batch_2024_02.csv</td>
+          <td>315</td>
+          <td><span class="pill pill-pass">Pass</span></td>
+          <td><span class="pill pill-pass">Merged</span></td>
+          <td class="mono">+300 ins · 15 upd</td>
+        </tr>
+        <tr>
+          <td class="mono">batch_2024_03.csv</td>
+          <td>215</td>
+          <td><span class="pill pill-blocked">Blocked</span></td>
+          <td><span class="pill pill-blocked">Quarantined</span></td>
+          <td class="mono">not merged</td>
+        </tr>
+        <tr>
+          <td class="mono">batch_2024_04.csv</td>
+          <td>265</td>
+          <td><span class="pill pill-pass">Pass</span></td>
+          <td><span class="pill pill-pass">Merged</span></td>
+          <td class="mono">+250 ins · 15 upd</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-sub">Table Growth</div>
+    <div class="card-title">Cumulative Lakehouse Rows After Each Batch</div>
+    <div class="chart-wrap"><canvas id="growthChart"></canvas></div>
+  </div>
+
+  <div class="card full">
+    <div class="card-sub">batch_2024_03.csv · Readiness Audit</div>
+    <div class="card-title">What the Audit Caught, Before Any Merge Was Attempted</div>
+    <div class="issue-item">
+      <div class="issue-dot"></div>
+      <div class="issue-text"><b>Schema drift:</b> required column <span class="mono">processing_hours</span> was missing — the source system sent it as <span class="mono">proc_hours_total</span> instead.</div>
+    </div>
+    <div class="issue-item">
+      <div class="issue-dot"></div>
+      <div class="issue-text"><b>Null values:</b> 18 rows (8.37% of the batch) had a null <span class="mono">region</span>, a required field.</div>
+    </div>
+    <div class="issue-item">
+      <div class="issue-dot"></div>
+      <div class="issue-text"><b>Duplicate primary keys:</b> 30 rows shared 15 duplicated <span class="mono">record_id</span> values — merging this batch as-is would have corrupted the upsert.</div>
+    </div>
+  </div>
+
+  <div class="card full">
+    <div class="card-sub">Pipeline</div>
+    <div class="card-title">Audit → Quality Gate → Incremental Load</div>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-label">01 · Readiness Audit</div>
+        Schema drift, null rates, duplicate keys — written to readiness_report.md
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step">
+        <div class="step-label">02 · Quality Gate</div>
+        pandera schema contract — fail routes to output/quarantine/
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step">
+        <div class="step-label">03 · Incremental Load</div>
+        deltalake MERGE keyed on record_id — idempotent upsert
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Lakehouse Readiness Pipeline — synthetic data, local demo · Python · pandera · deltalake</p>
+  <p><a href="https://github.com/klaricracia" target="_blank">github.com/klaricracia</a></p>
+</footer>
+
+<script>
+  const ctx = document.getElementById('growthChart');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['batch_01', 'batch_02', 'batch_03 (blocked)', 'batch_04'],
+      datasets: [{
+        label: 'Lakehouse row count',
+        data: [300, 600, 600, 850],
+        borderColor: '#4100F5',
+        backgroundColor: 'rgba(65,0,245,0.15)',
+        fill: true,
+        tension: 0.25,
+        pointBackgroundColor: ['#00C48C', '#00C48C', '#FF4632', '#00C48C'],
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        borderWidth: 2,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#9E9A9A', font: { family: 'JetBrains Mono', size: 10 } }, grid: { color: '#2a2525' } },
+        y: { ticks: { color: '#9E9A9A', font: { family: 'JetBrains Mono', size: 10 } }, grid: { color: '#2a2525' }, beginAtZero: true }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

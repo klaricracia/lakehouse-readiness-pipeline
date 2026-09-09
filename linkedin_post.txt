@@ -1,0 +1,32 @@
+PROJECT LAUNCH
+
+Most data platform failures aren't modeling problems. They're governance problems that got discovered too late.
+
+I built a small lakehouse pipeline that puts the audit before the build instead of after — because the batch with a broken primary key or a silently renamed column doesn't fail loudly in development. It fails quietly, three reports downstream, in production.
+
+Here's how it works:
+
+1. A pre-build readiness audit scans every incoming batch for schema drift, null rates, and duplicate keys — and writes a pass/fail verdict, not just a log line
+
+2. An automated quality gate (pandera) sits between "data arrived" and "data is in the table" — nothing gets merged without passing it
+
+3. A real Delta Lake table (deltalake + MERGE, keyed on record_id) replaces the nightly full reload with an incremental upsert
+
+Running it end to end on four synthetic batches:
+
+→ The audit caught batch 3 automatically — a renamed required column, 18 null values in a required field, and 15 duplicate keys — and quarantined it before it ever touched the table
+
+→ The other three batches merged cleanly: 850 unique records in the final table, upserts landing in place instead of duplicating
+
+→ Running the whole pipeline twice: table stays at 850 rows. Zero duplicates. That's the idempotency guarantee a scheduled pipeline can't skip.
+
+The real finding isn't the row count. It's that the audit blocked exactly the batch it should have — the one workstream that would have shipped broken if nobody had checked first.
+
+Stack: Python · pandera · deltalake (Delta Lake) · pandas · pytest
+
+Full project — code, ADRs, and the actual audit report from this run — is live on my GitHub.
+
+Link in comments.
+
+— Klarissa Artavia
+Data & AI Strategy · AI Transformation

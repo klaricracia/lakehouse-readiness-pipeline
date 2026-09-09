@@ -1,0 +1,22 @@
+Batch: batch_2024_03.csv
+Status: QUARANTINED — not merged into the lakehouse table
+Rows: 215
+
+Reasons:
+  - Required column missing: 'processing_hours'
+  - Duplicate value in primary key 'record_id': 'SR-000622'
+  - Duplicate value in primary key 'record_id': 'SR-000678'
+  - Duplicate value in primary key 'record_id': 'SR-000641'
+  - Duplicate value in primary key 'record_id': 'SR-000629'
+  - Duplicate value in primary key 'record_id': 'SR-000750'
+  - Duplicate value in primary key 'record_id': 'SR-000672'
+  - Duplicate value in primary key 'record_id': 'SR-000749'
+  - Duplicate value in primary key 'record_id': 'SR-000720'
+  - Duplicate value in primary key 'record_id': 'SR-000656'
+  - Duplicate value in primary key 'record_id': 'SR-000723'
+  - Duplicate value in primary key 'record_id': 'SR-000755'
+  - Duplicate value in primary key 'record_id': 'SR-000635'
+  - Duplicate value in primary key 'record_id': 'SR-000789'
+  - Duplicate value in primary key 'record_id': 'SR-000752'
+  - Duplicate value in primary key 'record_id': 'SR-000607'
+  - Null value in required field 'region'
